@@ -1,25 +1,24 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <Monstera />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Monstera from './components/Monstera.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  components: { Monstera }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body
+{
+  margin: 0px;
+  color: rgb(219, 219, 211);
+}
+#app
+{
+  overflow: hidden;
 }
 </style>
