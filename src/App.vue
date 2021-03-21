@@ -1,13 +1,15 @@
 <template>
   <Monstera />
+  <Variegata />
 </template>
 
 <script>
 import Monstera from './components/Monstera.vue'
+import Variegata from './components/Variegata.vue'
 
 export default {
   name: 'App',
-  components: { Monstera }
+  components: { Monstera, Variegata }
 }
 </script>
 

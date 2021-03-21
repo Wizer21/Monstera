@@ -178,7 +178,6 @@ export default {
   pointer-events: none;
 
   transition: height 400ms, width 400ms, margin 400ms;
-
 }
 #hide_text
 {
