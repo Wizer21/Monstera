@@ -7,7 +7,7 @@
         <img :src="require('../assets/images/adansonii.jpg')" alt="adansonii" id="adansonii_stack_img">
       </div>
       <p id="adansonii_text">
-        Adansonii est elle réputé pour ses petites feuilles perforées et pour sa capacité à grimper partout     
+        Adansonii est elle réputée pour ses petites feuilles perforées et pour sa capacité à grimper partout     
       </p>
     </div>
   </div>
@@ -165,7 +165,7 @@ export default {
   margin: 0px;
   font-size: 12vw;
 
-  transition: opacity 500ms, transform 1000ms;
+  transition: opacity 1000ms, transform 1000ms;
   opacity: 0;
 }
 .adansonii_letter:hover

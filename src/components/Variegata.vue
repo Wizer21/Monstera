@@ -22,7 +22,7 @@
       </div>
       <div id="p2">
         <p data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
-          Ces tâches blanches ne peuvent pas absorber la lumière, il lui faut donc deux fois plus de lumière pour la photosynthèse      
+          Ces tâches blanches ne peuvent pas absorber la lumière, il lui faut donc deux fois plus de lumière pour la photosynthèse.     
         </p>
           <div id="scene_3d">
           </div>
@@ -161,7 +161,9 @@ export default {
   width: 20vw;
   opacity: 0;
 
-  transition: opacity 1000ms;
+  transition: opacity 1000ms, transform 400ms;
+
+  transition-timing-function: ease-out;
 }
 #image_follow img
 {

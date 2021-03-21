@@ -56,7 +56,7 @@ export default {
 
     setTimeout(() => {            
       this.scroll.update()
-    }, 200)
+    }, 300)
   }
 }
 </script>

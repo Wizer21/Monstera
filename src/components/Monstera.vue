@@ -57,14 +57,14 @@ export default {
     let hide_text_container = document.getElementById('hide_text_container')
 
     leaf_name.addEventListener('mouseenter', () => {
-      hide_text_container.style.height = "12vw"
-      hide_text_container.style.width = "12vw"
+      hide_text_container.style.height = "15vw"
+      hide_text_container.style.width = "15vw"
       hide_text_container.style.margin = "0vw"
     })
     leaf_name.addEventListener('mouseleave', () => {
       hide_text_container.style.height = "0vw"
       hide_text_container.style.width = "0vw"
-      hide_text_container.style.margin = "6vw"
+      hide_text_container.style.margin = "7.5vw"
     })
     leaf_name.addEventListener('mousemove', event=> {
       let vw = window.innerWidth / 100
@@ -179,7 +179,8 @@ export default {
   overflow: hidden;
   pointer-events: none;
 
-  transition: height 400ms, width 400ms, margin 400ms;
+  transition: height 400ms, width 400ms, margin 400ms, transform 400ms;
+  transition-timing-function: ease-out;
 }
 #hide_text
 {
@@ -187,5 +188,8 @@ export default {
   margin: 3vw;
   width: 19vw;
   pointer-events: none;
+
+  transition: transform 400ms;
+  transition-timing-function: ease-out;
 }
 </style>
