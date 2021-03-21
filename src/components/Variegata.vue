@@ -94,7 +94,7 @@ export default {
     const animate = function () {
       requestAnimationFrame(animate)
       if (cylinder){
-        rotation = (cylinder_pos_target - cylinder_pos) * 0.1
+        rotation = (cylinder_pos_target - cylinder_pos) * 0.02
         cylinder_pos += rotation
 
         cylinder.rotation.y += rotation
