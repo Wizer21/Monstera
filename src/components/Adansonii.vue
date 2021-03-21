@@ -3,10 +3,10 @@
     <div id="adansonii_header">
     </div>
     <div id="adansonii_body">
-      <div>
-        <img :src="require('../assets/images/adansonii.jpg')" alt="Monstera leaf" id="main_leaf">
+      <div id="adansonii_stack">
+        <img :src="require('../assets/images/adansonii.jpg')" alt="adansonii" id="adansonii_stack_img">
       </div>
-      <p>
+      <p id="adansonii_text">
         Adansonii est elle réputé pour ses petites feuilles perforées et pour sa capacité à grimper partout     
       </p>
     </div>
@@ -26,6 +26,7 @@ export default {
     }
   },
   mounted(){
+    // Animated letters
     let adansonii_header = document.getElementById('adansonii_header')
     let elem
     let div
@@ -44,6 +45,44 @@ export default {
 
       adansonii_header.appendChild(div)
     }
+  
+    // Animated Body
+    let adansonii_stack = document.getElementById('adansonii_stack')
+    let adansonii = document.getElementById('adansonii')
+    let adansonii_text = document.getElementById('adansonii_text')
+    let isHold = false
+
+    let last_x = 0
+    let last_y = 0
+    let pos_x = 0
+    let pos_y = 0
+    
+    adansonii_stack.addEventListener('mouseenter', event => {
+      isHold = true
+      last_x = event.offsetX
+      last_y = event.offsetY
+      pos_x = 0
+      pos_y = 0
+    }) 
+    adansonii_stack.addEventListener('mouseleave', () => {
+      isHold = false
+      adansonii_stack.style.transform = "translate(0px, 0px)"
+      adansonii_text.style.transform = "translate(0px, 0px)"
+    }) 
+
+    adansonii.addEventListener('mousemove', event => {
+      if (isHold){
+        pos_x += event.offsetX - last_x
+        pos_y += event.offsetY - last_y
+
+        console.log(adansonii_stack.style.top)
+        adansonii_stack.style.transform = `translate(${pos_x}px, ${pos_y}px)`
+        adansonii_text.style.transform = `translate(${-pos_x}px, ${-pos_y}px)`
+
+        last_x = event.offsetX
+        last_y = event.offsetY
+      }
+    })
   }
 }
 </script>
@@ -52,6 +91,7 @@ export default {
 #adansonii
 {
   width: 100vw;
+  min-height: 100vh;
   background-color: #1c1c1c;
 
   display: flex;
@@ -65,6 +105,7 @@ export default {
   align-items: center;
 
   width: 100vw;
+  margin: 5vh;
 }
 /* Body */
 #adansonii_body
@@ -74,16 +115,47 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-}
-#adansonii_body img
-{
-  margin: 5vw;  
+  margin-top: 5vh;
 }
 #adansonii_body p
 {
   margin: 5vw;
   width: 20vw;
   font-size: 2vw;
+}
+#adansonii_stack
+{
+  position: relative;
+  width: 20vw;
+
+  transition-duration: 500ms;
+  transition-timing-function: ease-out;
+}
+#adansonii_text
+{
+  position: relative;
+  transition-duration: 2000ms;
+  transition-timing-function: ease-out;
+  pointer-events: none;
+}
+#adansonii_stack_img
+{
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  
+  margin: 0px;
+  cursor: pointer;
+
+  /* Prevent user pick */
+  user-drag: none; 
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+
+  pointer-events: none;
 }
 </style>
 
@@ -95,7 +167,6 @@ export default {
 
   transition: opacity 500ms, transform 1000ms;
   opacity: 0;
-
 }
 .adansonii_letter:hover
 {

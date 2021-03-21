@@ -54,8 +54,7 @@ export default {
       }   
     })
 
-    setTimeout(() => {         
-      console.log("upadt")       
+    setTimeout(() => {            
       this.scroll.update()
     }, 200)
   }
