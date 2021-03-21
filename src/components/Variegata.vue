@@ -1,27 +1,27 @@
 <template>
   <div id="variegata">
     <div id="variegata_title_container">
-      <h2 id="variegata_title">
+      <h2 id="variegata_title" data-scroll data-scroll-speed="-0.2" data-scroll-direction="horizontal">
         Variegata
       </h2>
       <div id="image_follow">      
-        <img :src="require('../assets/images/variegata.webp')" alt="monstera" id="floating_image">
+        <img :src="require('../assets/images/feuille-duo.png')" alt="monstera" id="floating_image">
       </div>
-      <h2 id="title_copy">
+      <h2 id="title_copy" data-scroll data-scroll-speed="0.2" data-scroll-direction="horizontal">
         Variegata
       </h2>
     </div>
     <div id="variegata_container">
-      <div id="p1">
+      <div id="p1" data-scroll data-scroll-speed="-2" data-scroll-direction="vertical">
         <div id="variegata_leaf_container">
           <img :src="require('../assets/images/variegata_leaf.png')" alt="monstera variegata">
         </div>
-        <p>
+        <p data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">
           La Variegata est reconnaissable à ses feuilles panachées.
         </p>
       </div>
       <div id="p2">
-        <p>
+        <p data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
           Ces tâches blanches ne peuvent pas absorber la lumière, il lui faut donc deux fois plus de lumière pour la photosynthèse      
         </p>
           <div id="scene_3d">
@@ -52,7 +52,7 @@ export default {
     })
     variegata_title.addEventListener('mousemove', event => {
       let vw = window.innerWidth / 10
-      image_follow.style.transform = `translate(${event.offsetX - vw}px, ${event.offsetY - vw}px)`   
+      image_follow.style.transform = `translate(${event.offsetX - vw}px, ${event.offsetY - vw}px) rotate(${event.offsetX / 30}deg)`   
     })
     
     // 3D Scene
@@ -119,7 +119,7 @@ export default {
 <style scoped>
 #variegata {
   width: 100vw;
-  background-color: #262626;
+  background-color: #2f4d2c;
 
   display: flex;
   justify-content: center;

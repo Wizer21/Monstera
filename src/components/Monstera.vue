@@ -2,21 +2,22 @@
   <div id="monstera">
     <div id="header">
       <h1 id="main_title">
-        Monstera Deliciosa
+        Monstera <br/>
+        Deliciosa
       </h1>
       <div id="leaf_container">
         <img :src="require('../assets/images/leaf.png')" alt="Monstera leaf" id="main_leaf">
       </div>
     </div>
     <div id="body">
-      <div id="leaf_presentation">
+      <div id="leaf_presentation" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
         <img :src="require('../assets/images/multiple_leaf.jpg')" alt="Monstera" id="multiple_leaf">
       </div>
       <div id="side">
-        <p>
+        <p data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
           Monstera deliciosa est une plante originaire des forêts tropicales. Populaire pour ses feuilles gigantesques.
         </p>
-        <div id="leaf_name">
+        <div id="leaf_name" data-scroll data-scroll-speed="2" data-scroll-direction="vertical">
           <img :src="require('../assets/images/huge_leaf.jpg')" alt="Monstera" id="huge_leaf">
           <div id="hide_text_container">
             <p id="hide_text">
@@ -42,7 +43,7 @@ export default {
     let hide_text = document.getElementById('hide_text')
 
     header.addEventListener('mousemove', event => {
-      let posX = (event.offsetX - (window.innerWidth / 2)) / 3 
+      let posX = (event.offsetX - (window.innerWidth / 2)) / 2 
       leaf_container.style.transform = `translateX(${posX}px)`
       main_title.style.transform = `translateX(${-posX}px)`
 
@@ -93,11 +94,12 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: #1c1c1c;
 }
 #main_title
 {
   position: absolute;
-  font-size: 3vw;
+  font-size: 8vw;
   pointer-events: none;
 
   transition-timing-function: ease-out;
