@@ -1,8 +1,9 @@
 <template>
   <div data-scroll-container>
     <Monstera data-scroll-section />
-    <Variegata data-scroll-section />
+    <Variegata data-scroll-section/>
     <Adansonii data-scroll-section id="adansonii" ref="adansoniiref"/>
+    <Footer data-scroll-section />
   </div>
 </template>
 
@@ -10,11 +11,13 @@
 import Monstera from './components/Monstera.vue'
 import Variegata from './components/Variegata.vue'
 import Adansonii from './components/Adansonii.vue'
+import Footer from './components/Footer.vue'
+
 import LocomotiveScroll from 'locomotive-scroll';
 
 export default {
   name: 'App',
-  components: { Monstera, Variegata, Adansonii },
+  components: { Monstera, Variegata, Adansonii, Footer },
   data(){
     return {
       scroll: null

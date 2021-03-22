@@ -75,7 +75,6 @@ export default {
         pos_x += event.offsetX - last_x
         pos_y += event.offsetY - last_y
 
-        console.log(adansonii_stack.style.top)
         adansonii_stack.style.transform = `translate(${pos_x}px, ${pos_y}px)`
         adansonii_text.style.transform = `translate(${-pos_x}px, ${-pos_y}px)`
 
@@ -121,7 +120,7 @@ export default {
 {
   margin: 5vw;
   width: 20vw;
-  font-size: 2vw;
+  font-size: 3em;
 }
 #adansonii_stack
 {

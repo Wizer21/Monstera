@@ -85,6 +85,7 @@ export default {
 
   display: flex;
   flex-direction: column;
+  z-index: 1;
 }
 /* HEADER */
 #header
@@ -140,7 +141,7 @@ export default {
 }
 #side p 
 {  
-  font-size: 2vw;
+  font-size: 3em;
 }
 #leaf_presentation
 {
@@ -187,6 +188,7 @@ export default {
   position: static;
   margin: 3vw;
   width: 19vw;
+  font-size: 3em;
   pointer-events: none;
 
   transition: transform 400ms;
