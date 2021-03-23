@@ -11,21 +11,21 @@
         Variegata
       </h2>
     </div>
-    <div id="variegata_container">
-      <div id="p1" data-scroll data-scroll-speed="-2" data-scroll-direction="vertical">
-        <div id="variegata_leaf_container">
-          <img :src="require('../assets/images/variegata_leaf.png')" alt="monstera variegata" id="variegata_leaf">
-        </div>
-        <p data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">
-          La Variegata est reconnaissable à ses feuilles panachées.
-        </p>
+    <div id="p1" data-scroll data-scroll-speed="-2" data-scroll-direction="vertical">
+      <div id="variegata_leaf_container">
+        <img :src="require('../assets/images/variegata_leaf.png')" alt="monstera variegata" id="variegata_leaf">
       </div>
-      <div id="p2">
-        <p data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
-          Ces tâches blanches ne peuvent pas absorber la lumière, il lui faut donc deux fois plus de lumière pour la photosynthèse.     
-        </p>
-          <div id="scene_3d">
-          </div>
+      <p data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">
+        La Variegata est reconnaissable à ses feuilles panachées.
+      </p>
+    </div>
+    <div id="p2">
+      <p data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
+        Ces tâches blanches ne peuvent pas absorber la lumière, il lui faut donc deux fois plus de lumière pour la photosynthèse.     
+      </p>
+      <div id="scene_container">
+        <div id="scene_3d">
+        </div>
       </div>
     </div>
   </div>
@@ -70,18 +70,18 @@ export default {
     scene.add(light)
 
     const loader = new THREE.TextureLoader();
-    const geometry = new THREE.CylinderGeometry( 10, 10, 10, 50 );
+    const geometry = new THREE.CylinderGeometry( 10, 10, 16, 50 );
     const material = new THREE.MeshBasicMaterial( {transparent: true, map: loader.load(require("../assets/images/variegata.png"))} );
     const cylinder = new THREE.Mesh( geometry, material );
     scene.add( cylinder );
 
     const camera = new THREE.PerspectiveCamera(
         75,
-        window.innerWidth / window.innerHeight,
+        1,
         0.1,
         100
     )
-    camera.position.set(10, 0, 15)
+    camera.position.set(10, 0, 17)
     camera.rotation.z = 45 * Math.PI / 180
     camera.lookAt(0, 0, 0)
 
@@ -89,8 +89,14 @@ export default {
     renderer.setClearColor( 0x000000, 0 )
     three_scene.appendChild(renderer.domElement)
     
-    let vw = window.innerWidth / 3
-    renderer.setSize(vw, vw)
+    if( window.innerWidth > 800){
+      let vw = window.innerWidth / 3
+      renderer.setSize(vw, vw)
+    }
+    else{      
+      let vw = window.innerWidth / 1.6
+      renderer.setSize(vw, vw)
+    }
 
     let cylinder_pos = 1
     let cylinder_pos_target = 1
@@ -134,6 +140,8 @@ export default {
 /* HEADER */
 #variegata_title_container {
   display: grid;
+  margin-top: 2em;
+  margin-bottom: 2em;
 }
 #variegata_title{
   font-size: 15vw;
@@ -190,8 +198,8 @@ export default {
 #variegata_leaf_container
 {
   margin: 8vw;
-  width: 35vw;
-  height: 35vw;
+  width: 22em;
+  height: 22em;
 
   clip-path: polygon(61% 7%, 55% 6%, 50% 6%, 43% 7%, 42% 7%, 37% 8%, 31% 10%, 26% 12%, 21% 15%, 17% 18%, 14% 21%, 10% 26%, 7% 32%, 4% 38%, 2% 44%, 1% 49%, 1% 55%, 2% 59%, 3% 66%, 3% 68%, 4% 72%, 6% 76%, 8% 80%, 10% 82%, 13% 85%, 16% 87%, 19% 89%, 23% 92%, 27% 95%, 31% 97%, 33% 98%, 38% 99%, 40% 99%, 44% 99%, 50% 98%, 55% 97%, 59% 96%, 62% 95%, 68% 92%, 73% 89%, 78% 86%, 81% 83%, 85% 78%, 87% 74%, 89% 70%, 92% 65%, 94% 61%, 96% 55%, 97% 49%, 97% 44%, 96% 38%, 95% 33%, 92% 27%, 90% 24%, 87% 20%, 83% 16%, 78% 13%, 71% 10%, 67% 9%);
   animation: var(--rotate_loop) 25s infinite linear;
@@ -204,11 +212,11 @@ export default {
   animation: var(--anti_rotate_loop) 25s infinite linear;
 }
 #p1 p {
-  margin: 2vw;
-  margin-top: 15vw;
-  font-size: 3em;
+  margin: 1em;
+  font-size: 2em;
+  margin-top: 25vh;
 
-  width: 15vw;
+  width: 25%;
 }
 #p2
 {
@@ -222,13 +230,39 @@ export default {
 {
   margin-left: 20vw;
   margin-top: 5vw;
-  font-size: 3em;
-  width: 25vw;
+  font-size: 2em;
+  width: 25%;
 }
 #scene_3d
 {
   pointer-events: none;
   transform: rotate(-25deg) translate(10vw, -10vw);
+}
+#scene_container
+{
+  margin: 4em;
+}
+@media screen and (max-width: 800px) {  
+  #p1
+  {
+    flex-direction: column;
+    margin-top: 10vh;
+  }  
+  #p1 p
+  {
+    padding: 10%;
+    width: 80%;
+    margin-top: 0vh;
+  }
+  #p2
+  {  
+    flex-direction: column;
+  } 
+  #p2 p
+  {
+    padding-top: 10%;
+    width: 80%;
+  }
 }
 </style>
 

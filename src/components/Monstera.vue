@@ -57,19 +57,18 @@ export default {
     let hide_text_container = document.getElementById('hide_text_container')
 
     leaf_name.addEventListener('mouseenter', () => {
-      hide_text_container.style.height = "17vw"
-      hide_text_container.style.width = "17vw"
+      hide_text_container.style.height = "250px"
+      hide_text_container.style.width = "250px"
       hide_text_container.style.margin = "0vw"
     })
     leaf_name.addEventListener('mouseleave', () => {
       hide_text_container.style.height = "0vw"
       hide_text_container.style.width = "0vw"
-      hide_text_container.style.margin = "8.5vw"
+      hide_text_container.style.margin = "125px"
     })
     leaf_name.addEventListener('mousemove', event=> {
-      let vw = window.innerWidth / 100
-      let x = event.offsetX - (vw * 8.5)
-      let y = event.offsetY - (vw * 8.5)
+      let x = event.offsetX - 125
+      let y = event.offsetY - 125
       hide_text_container.style.transform = `translate(${x}px, ${y}px)`
       hide_text.style.transform = `translate(${-x}px, ${-y}px)`
     })
@@ -137,7 +136,7 @@ export default {
 #side
 {
   margin-top: 20vw;
-  width: 20vw;
+  width: 40%;
 }
 #monstera_presentation
 {  
@@ -146,7 +145,7 @@ export default {
 #leaf_presentation
 {
   margin: 10vw;
-  width: 35vw;
+  width: 20em;
 }
 #multiple_leaf
 {  
@@ -157,9 +156,8 @@ export default {
 }
 #leaf_name
 {
-  margin-top: 5vw;
-  margin-bottom: 5vw;
-  width: 25vw;  
+  margin: 2em;
+  width: 20em;  
 
   display: flex;
 }
@@ -186,12 +184,23 @@ export default {
 #hide_text
 {
   position: static;
-  margin: 3vw;
-  width: 19vw;
+  margin: 0.5em;
+  width: 9em;
   font-size: 2em;
   pointer-events: none;
 
   transition: transform 400ms;
   transition-timing-function: ease-out;
+}
+@media screen and (max-width: 800px) {  
+  #body
+  {
+   flex-direction: column; 
+  }
+  #side
+  {
+    margin-top: 0vw;
+    width: 80%;
+  }
 }
 </style>

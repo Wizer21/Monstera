@@ -83,13 +83,16 @@ export default {
         else{
           size -= pos_x / 4
         }
+        if(pos_y < 0){
+          size += pos_y / 4
+        }
+        else{
+          size -= pos_y / 4
+        }
 
         adansonii_stack.style.transform = `translate(${pos_x}px, ${pos_y}px)`
         adansonii_text.style.transform = `translate(${-pos_x}px, ${-pos_y}px)`
         adansonii_stack.style.clipPath = `circle(${size}% at 50% 50%)`
-
-        console.log(pos_x / ((window.innerWidth / 2) / 100))
-
 
         last_x = event.offsetX
         last_y = event.offsetY
@@ -116,8 +119,9 @@ export default {
   justify-content: center;
   align-items: center;
 
-  width: 100vw;
-  margin: 5vh;
+  width: 100%;
+  margin-top: 3em;
+  margin-bottom: 2em;
 }
 /* Body */
 #adansonii_body
@@ -127,22 +131,16 @@ export default {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-top: 5vh;
-}
-#adansonii_body p
-{
-  margin: 5vw;
-  width: 20vw;
-  font-size: 3em;
+  margin-top: 5em;
+  margin-bottom: 5em;
 }
 #adansonii_stack
 {
   position: relative;
-  width: 20vw;
+  width: 16em;
 
-  transition-duration: 500ms;
+  transition-duration: 1000ms;
   transition-timing-function: ease-out;
-  overflow: hidden;
 }
 #adansonii_text
 {
@@ -150,6 +148,10 @@ export default {
   transition-duration: 2000ms;
   transition-timing-function: ease-out;
   pointer-events: none;
+
+  margin: 2em;
+  width: 10em;
+  font-size: 2em;
 }
 #adansonii_stack_img
 {
@@ -169,6 +171,12 @@ export default {
   -ms-user-select: none;
 
   pointer-events: none;
+}
+@media screen and (max-width: 800px) {  
+  #adansonii_body
+  {
+    flex-direction: column;
+  }
 }
 </style>
 
