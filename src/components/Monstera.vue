@@ -6,19 +6,19 @@
         Deliciosa
       </h1>
       <div id="leaf_container">
-        <img :src="require('../assets/images/leaf.png')" alt="Monstera leaf" id="main_leaf">
+        <img :src="require('../assets/images/leaf.png')" alt="Monstera leaf" id="main_leaf" @load="loaded">
       </div>
     </div>
     <div id="body">
       <div id="leaf_presentation" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
-        <img :src="require('../assets/images/multiple_leaf.jpg')" alt="Monstera" id="multiple_leaf">
+        <img :src="require('../assets/images/multiple_leaf.jpg')" alt="Monstera" id="multiple_leaf" @load="loaded">>
       </div>
       <div id="side">
         <p id="monstera_presentation" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
           Monstera deliciosa est une plante originaire des forêts tropicales. Populaire pour ses feuilles gigantesques.
         </p>
         <div id="leaf_name" data-scroll data-scroll-speed="2" data-scroll-direction="vertical">
-          <img :src="require('../assets/images/huge_leaf.jpg')" alt="Monstera" id="huge_leaf">
+          <img :src="require('../assets/images/huge_leaf.jpg')" alt="Monstera" id="huge_leaf" @load="loaded">>
           <div id="hide_text_container">
             <p id="hide_text">
               Elle tient son nom de la contraction de 'monstrueux' et 'délicieux' due à sa taille pouvant atteindre les 9 mètres.
@@ -33,6 +33,11 @@
 <script>
 export default {
   name: 'Monstera',
+  methods: {
+    loaded(){
+      this.$emit('newload')
+    }
+  },
   mounted(){
 
     // Header animation

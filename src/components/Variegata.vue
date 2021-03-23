@@ -5,7 +5,7 @@
         Variegata
       </h2>
       <div id="image_follow">      
-        <img :src="require('../assets/images/feuille-duo.png')" alt="monstera" id="floating_image">
+        <img :src="require('../assets/images/feuille-duo.png')" alt="monstera" id="floating_image" @load="loaded">
       </div>
       <h2 id="title_copy" data-scroll data-scroll-speed="0.2" data-scroll-direction="horizontal">
         Variegata
@@ -13,7 +13,7 @@
     </div>
     <div id="p1" data-scroll data-scroll-speed="-1" data-scroll-direction="vertical">
       <div id="variegata_leaf_container">
-        <img :src="require('../assets/images/variegata_leaf.png')" alt="monstera variegata" id="variegata_leaf">
+        <img :src="require('../assets/images/variegata_leaf.jpg')" alt="monstera variegata" id="variegata_leaf" @load="loaded">
       </div>
       <p data-scroll data-scroll-speed="1" data-scroll-direction="horizontal">
         La Variegata est reconnaissable à ses feuilles panachées.
@@ -36,6 +36,11 @@ import * as THREE from 'three';
 
 export default {
   name: "Variegata",
+  methods: {
+    loaded(){
+      this.$emit('newload')
+    }
+  },
   mounted(){
     document.getElementById('variegata_leaf_container').style.setProperty('--rotate_loop', this.$style["rotate_loop"])
     document.getElementById('variegata_leaf').style.setProperty('--anti_rotate_loop', this.$style["anti_rotate_loop"])

@@ -1,8 +1,8 @@
 <template>
   <div data-scroll-container>
-    <Monstera data-scroll-section />
-    <Variegata data-scroll-section/>
-    <Adansonii data-scroll-section id="adansonii" ref="adansoniiref"/>
+    <Monstera data-scroll-section @newload="updateLoadCount"/>
+    <Variegata data-scroll-section @newload="updateLoadCount" />
+    <Adansonii data-scroll-section id="adansonii" ref="adansoniiref" @newload="updateLoadCount" />
     <Footer data-scroll-section />
   </div>
 </template>
@@ -20,7 +20,16 @@ export default {
   components: { Monstera, Variegata, Adansonii, Footer },
   data(){
     return {
-      scroll: null
+      scroll: null,
+      loadCount: 0
+    }
+  },
+  methods: {
+    updateLoadCount(){
+      this.loadCount += 1 
+      if (this.loadCount == 6){
+        this.scroll.update()
+      }
     }
   },
   mounted(){    
@@ -56,10 +65,6 @@ export default {
         }, 200)
       }   
     })
-
-    setTimeout(() => {            
-      this.scroll.update()
-    }, 300)
   }
 }
 </script>

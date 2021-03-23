@@ -4,7 +4,7 @@
     </div>
     <div id="adansonii_body">
       <div id="adansonii_stack">
-        <img :src="require('../assets/images/adansonii.jpg')" alt="adansonii" id="adansonii_stack_img">
+        <img :src="require('../assets/images/adansonii.jpg')" alt="adansonii" id="adansonii_stack_img"  @load="loaded">
       </div>
       <p id="adansonii_text">
         Adansonii est elle réputée pour ses petites feuilles perforées et pour sa capacité à grimper partout.    
@@ -23,6 +23,9 @@ export default {
       for (let l of letters){
         l.style.opacity = 1
       }
+    },
+    loaded(){
+      this.$emit('newload')
     }
   },
   mounted(){
