@@ -147,7 +147,7 @@ export default {
 {
   margin-top: 10vw;
   margin-left: 10vw;
-  width: 30em;
+  width: 40em;
 }
 #multiple_leaf
 {  
@@ -158,7 +158,7 @@ export default {
 }
 #leaf_name
 {
-  margin: 2em;
+  margin: 4vw;
   width: 20em;  
 
   display: flex;

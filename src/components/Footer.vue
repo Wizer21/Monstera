@@ -45,7 +45,7 @@ export default {
     let portefolio = document.getElementById('portefolio')
     let portefolio_text = document.getElementById('portefolio_text')
     portefolio.addEventListener('mouseenter', () => {
-      portefolio_text.style.clipPath = "inset(0% 0 0 0)"
+      portefolio_text.style.clipPath = "inset(20% 0 0 0)"
     })    
     portefolio.addEventListener('mouseleave', () => {
       portefolio_text.style.clipPath = "inset(75% 0 0 0)"
@@ -66,8 +66,6 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
-  padding: 5vh;
 }
 #effect_holder
 {
@@ -107,8 +105,7 @@ export default {
 }
 #portefolio
 {
-  margin-left: auto;
-  margin-right: 10vw;
+  margin: 2em;
   text-decoration: none;
 
   display: grid;
@@ -118,7 +115,6 @@ export default {
   color: #1f1f1f;
   font-size: 7vw;
   margin: 0px;
-  margin-right: 10vw;
 
   grid-column: 1;
   grid-row: 1;
@@ -130,10 +126,27 @@ export default {
   grid-column: 1;
   grid-row: 1;
   margin: 0px;
-  margin-right: 10vw;
 
   transition-duration: 1s;
   clip-path: inset(75% 0 0 0);
+}
+@media screen and (max-width: 800px) {  
+  #adansonii_body
+  {
+    flex-direction: column;
+  }
+  #adansonii_stack
+  {
+    width: 20em;
+  }
+  #end
+  {
+    margin-left: 5em;
+  }
+  #portefolio
+  {
+    margin-right: 5em;
+  }
 }
 </style>
 

@@ -11,7 +11,7 @@
         Variegata
       </h2>
     </div>
-    <div id="p1" data-scroll data-scroll-speed="-2" data-scroll-direction="vertical">
+    <div id="p1" data-scroll data-scroll-speed="-1" data-scroll-direction="vertical">
       <div id="variegata_leaf_container">
         <img :src="require('../assets/images/variegata_leaf.png')" alt="monstera variegata" id="variegata_leaf">
       </div>
@@ -197,9 +197,9 @@ export default {
 }
 #variegata_leaf_container
 {
-  margin: 8vw;
-  width: 22em;
-  height: 22em;
+  margin: 4vw;
+  width: 30em;
+  height: 30em;
 
   clip-path: polygon(61% 7%, 55% 6%, 50% 6%, 43% 7%, 42% 7%, 37% 8%, 31% 10%, 26% 12%, 21% 15%, 17% 18%, 14% 21%, 10% 26%, 7% 32%, 4% 38%, 2% 44%, 1% 49%, 1% 55%, 2% 59%, 3% 66%, 3% 68%, 4% 72%, 6% 76%, 8% 80%, 10% 82%, 13% 85%, 16% 87%, 19% 89%, 23% 92%, 27% 95%, 31% 97%, 33% 98%, 38% 99%, 40% 99%, 44% 99%, 50% 98%, 55% 97%, 59% 96%, 62% 95%, 68% 92%, 73% 89%, 78% 86%, 81% 83%, 85% 78%, 87% 74%, 89% 70%, 92% 65%, 94% 61%, 96% 55%, 97% 49%, 97% 44%, 96% 38%, 95% 33%, 92% 27%, 90% 24%, 87% 20%, 83% 16%, 78% 13%, 71% 10%, 67% 9%);
   animation: var(--rotate_loop) 25s infinite linear;

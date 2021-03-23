@@ -137,7 +137,7 @@ export default {
 #adansonii_stack
 {
   position: relative;
-  width: 16em;
+  width: 25em;
 
   transition-duration: 1000ms;
   transition-timing-function: ease-out;
@@ -176,6 +176,10 @@ export default {
   #adansonii_body
   {
     flex-direction: column;
+  }
+  #adansonii_stack
+  {
+    width: 20em;
   }
 }
 </style>

@@ -80,7 +80,9 @@ body
 {
   margin: 0px;
   color: rgb(219, 219, 211);
-  font-family: 'Lexend', sans-serif;;
+  font-family: 'Lexend', sans-serif;
+
+  background-color: #262626;
 }
 #app
 {
