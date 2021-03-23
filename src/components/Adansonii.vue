@@ -7,7 +7,7 @@
         <img :src="require('../assets/images/adansonii.jpg')" alt="adansonii" id="adansonii_stack_img">
       </div>
       <p id="adansonii_text">
-        Adansonii est elle réputée pour ses petites feuilles perforées et pour sa capacité à grimper partout     
+        Adansonii est elle réputée pour ses petites feuilles perforées et pour sa capacité à grimper partout.    
       </p>
     </div>
   </div>

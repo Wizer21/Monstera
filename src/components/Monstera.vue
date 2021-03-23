@@ -21,7 +21,7 @@
           <img :src="require('../assets/images/huge_leaf.jpg')" alt="Monstera" id="huge_leaf">
           <div id="hide_text_container">
             <p id="hide_text">
-              Elle tient son nom de la contraction de «monstrueux» et «délicieux» due à sa taille pouvant atteindre les 9 mètres.
+              Elle tient son nom de la contraction de 'monstrueux' et 'délicieux' due à sa taille pouvant atteindre les 9 mètres.
             </p>
           </div>
         </div>

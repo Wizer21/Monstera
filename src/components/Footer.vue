@@ -12,7 +12,7 @@
       </p>
     </div>    
     <p id="end" data-scroll data-scroll-speed="-6" data-scroll-direction="horizontal">
-      Si tu a apprécié la promenade, viens jeter un œil à mon portefolio
+      Si tu as apprécié la promenade, viens jeter un œil à mon portefolio !
     </p>
     <a id="portefolio" href="https://wizer21.github.io/" target="_blank" data-scroll data-scroll-speed="3" data-scroll-direction="horizontal">
       <p id="portefolio_text_border">
@@ -63,7 +63,6 @@ export default {
   background-color: #0f0f0f;
 
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
 }
