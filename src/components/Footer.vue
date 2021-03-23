@@ -12,7 +12,7 @@
       </p>
     </div>    
     <p id="end" data-scroll data-scroll-speed="-6" data-scroll-direction="horizontal">
-      Si tu à apprécier la promenade, viens jeter un oeil à mon porte-folio
+      Si tu a apprécié la promenade, viens jeter un œil à mon portefolio
     </p>
     <a id="portefolio" href="https://wizer21.github.io/" target="_blank" data-scroll data-scroll-speed="3" data-scroll-direction="horizontal">
       <p id="portefolio_text_border">
@@ -82,14 +82,12 @@ export default {
 }
 #mouse_over
 {
-  -webkit-text-stroke: 1px #345c30;
-  color: transparent;
+  color: #1f1f1f;
   cursor: none;
 }
 #top_text
 {
-  -webkit-text-stroke: 1px #345c30;
-  color: #345c30;
+  color: #428a3b;
   clip-path: circle(0% at 0% 0%);
   pointer-events: none;
 
@@ -97,43 +95,42 @@ export default {
 }
 #bot_text
 {
-  -webkit-text-stroke: 1px #345c30;
-  color: #345c30;
+  color: #428a3b;
   animation: var(--float_anim) 1s infinite ease-in-out alternate;
   pointer-events: none;
 }
 #end
 {
-  font-size: 1em;
+  font-size: 2em;
   margin-right: auto;
   margin-left: 10vw;
 }
 #portefolio
 {
   margin-left: auto;
-  margin-right: 30vw;
+  margin-right: 10vw;
   text-decoration: none;
 
   display: grid;
 }
 #portefolio_text_border
 {
-  -webkit-text-stroke: 1px #345c30;
-  color: transparent;
-  font-size: 4em;
+  color: #1f1f1f;
+  font-size: 7vw;
   margin: 0px;
+  margin-right: 10vw;
 
   grid-column: 1;
   grid-row: 1;
 }
 #portefolio_text
 {
-  -webkit-text-stroke: 1px #2f4d2c;
-  color: #2f4d2c;
-  font-size: 4em;
+  color: #428a3b;
+  font-size: 7vw;
   grid-column: 1;
   grid-row: 1;
   margin: 0px;
+  margin-right: 10vw;
 
   transition-duration: 1s;
   clip-path: inset(75% 0 0 0);

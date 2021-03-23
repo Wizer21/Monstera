@@ -137,6 +137,7 @@ export default {
 {
   margin-top: 20vw;
   width: 40%;
+  padding: 2em;
 }
 #monstera_presentation
 {  
@@ -144,8 +145,9 @@ export default {
 }
 #leaf_presentation
 {
-  margin: 10vw;
-  width: 20em;
+  margin-top: 10vw;
+  margin-left: 10vw;
+  width: 30em;
 }
 #multiple_leaf
 {  
@@ -196,6 +198,10 @@ export default {
   #body
   {
    flex-direction: column; 
+  }
+  #leaf_presentation
+  {
+    width: 20em;
   }
   #side
   {
