@@ -68,6 +68,7 @@ export default {
       isHold = false
       adansonii_stack.style.transform = "translate(0px, 0px)"
       adansonii_text.style.transform = "translate(0px, 0px)"
+      adansonii_stack.style.clipPath = "circle(100% at 50% 50%)"
     }) 
 
     adansonii.addEventListener('mousemove', event => {
@@ -75,8 +76,20 @@ export default {
         pos_x += event.offsetX - last_x
         pos_y += event.offsetY - last_y
 
+        let size = 100
+        if(pos_x < 0){
+          size += pos_x / 4
+        }
+        else{
+          size -= pos_x / 4
+        }
+
         adansonii_stack.style.transform = `translate(${pos_x}px, ${pos_y}px)`
         adansonii_text.style.transform = `translate(${-pos_x}px, ${-pos_y}px)`
+        adansonii_stack.style.clipPath = `circle(${size}% at 50% 50%)`
+
+        console.log(pos_x / ((window.innerWidth / 2) / 100))
+
 
         last_x = event.offsetX
         last_y = event.offsetY
@@ -129,6 +142,7 @@ export default {
 
   transition-duration: 500ms;
   transition-timing-function: ease-out;
+  overflow: hidden;
 }
 #adansonii_text
 {

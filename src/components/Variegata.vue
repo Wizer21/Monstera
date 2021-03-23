@@ -37,7 +37,8 @@ import * as THREE from 'three';
 export default {
   name: "Variegata",
   mounted(){
-    document.getElementById('variegata_leaf').style.setProperty('--circle_float', this.$style["circle_float"])
+    document.getElementById('variegata_leaf_container').style.setProperty('--rotate_loop', this.$style["rotate_loop"])
+    document.getElementById('variegata_leaf').style.setProperty('--anti_rotate_loop', this.$style["anti_rotate_loop"])
 
     // Title hover
     let variegata_title = document.getElementById('variegata_title')
@@ -70,7 +71,7 @@ export default {
 
     const loader = new THREE.TextureLoader();
     const geometry = new THREE.CylinderGeometry( 10, 10, 10, 50 );
-    const material = new THREE.MeshBasicMaterial( {transparent: true, map: loader.load(require("../assets/images/multiples_variegata.png"))} );
+    const material = new THREE.MeshBasicMaterial( {transparent: true, map: loader.load(require("../assets/images/variegata.png"))} );
     const cylinder = new THREE.Mesh( geometry, material );
     scene.add( cylinder );
 
@@ -191,13 +192,16 @@ export default {
   margin: 8vw;
   width: 35vw;
   height: 35vw;
+
+  clip-path: polygon(61% 7%, 55% 6%, 50% 6%, 43% 7%, 42% 7%, 37% 8%, 31% 10%, 26% 12%, 21% 15%, 17% 18%, 14% 21%, 10% 26%, 7% 32%, 4% 38%, 2% 44%, 1% 49%, 1% 55%, 2% 59%, 3% 66%, 3% 68%, 4% 72%, 6% 76%, 8% 80%, 10% 82%, 13% 85%, 16% 87%, 19% 89%, 23% 92%, 27% 95%, 31% 97%, 33% 98%, 38% 99%, 40% 99%, 44% 99%, 50% 98%, 55% 97%, 59% 96%, 62% 95%, 68% 92%, 73% 89%, 78% 86%, 81% 83%, 85% 78%, 87% 74%, 89% 70%, 92% 65%, 94% 61%, 96% 55%, 97% 49%, 97% 44%, 96% 38%, 95% 33%, 92% 27%, 90% 24%, 87% 20%, 83% 16%, 78% 13%, 71% 10%, 67% 9%);
+  animation: var(--rotate_loop) 25s infinite linear;
 }
 #variegata_leaf
 {
   object-fit: contain;
   width: 100%;
   height: 100%;
-  animation: var(--circle_float) 5s infinite ease-in-out alternate;
+  animation: var(--anti_rotate_loop) 25s infinite linear;
 }
 #p1 p {
   margin: 2vw;
@@ -237,12 +241,20 @@ export default {
     transform: skew(5deg, 0deg); 
   }
 }
-@keyframes circle_float {
+@keyframes rotate_loop {
   0%{
-    clip-path: polygon(4% 50%, 4% 46%, 5% 41%, 7% 37%, 9% 33%, 11% 29%, 13% 26%, 16% 23%, 20% 19%, 24% 17%, 25% 17%, 30% 16%, 32% 14%, 37% 12%, 39% 11%, 45% 9%, 49% 9%, 52% 8%, 56% 9%, 60% 10%, 65% 10%, 70% 11%, 73% 12%, 77% 13%, 81% 13%, 84% 15%, 87% 18%, 89% 20%, 91% 22%, 92% 25%, 94% 28%, 94% 31%, 94% 34%, 95% 37%, 95% 40%, 95% 42%, 95% 44%, 94% 46%, 94% 49%, 94% 53%, 94% 57%, 94% 61%, 94% 65%, 92% 70%, 90% 73%, 88% 77%, 86% 80%, 84% 83%, 81% 86%, 78% 90%, 75% 92%, 71% 94%, 68% 97%, 64% 97%, 62% 98%, 60% 98%, 57% 99%, 55% 98%, 52% 98%, 48% 98%, 44% 97%, 41% 97%, 38% 97%, 35% 96%, 31% 96%, 28% 95%, 24% 94%, 20% 93%, 17% 92%, 12% 89%, 10% 87%, 8% 84%, 6% 82%, 5% 79%, 4% 76%, 3% 73%, 3% 71%, 3% 66%, 3% 63%, 4% 60%, 4% 56%, 4% 54%);
+    transform: rotate(0deg);
   }
   100%{
-    clip-path: polygon(7% 50%, 6% 45%, 7% 40%, 9% 37%, 10% 33%, 11% 29%, 12% 24%, 15% 17%, 19% 14%, 23% 11%, 27% 8%, 31% 6%, 35% 5%, 39% 6%, 43% 7%, 47% 8%, 49% 7%, 52% 7%, 56% 6%, 59% 7%, 63% 8%, 68% 8%, 73% 9%, 78% 10%, 81% 12%, 84% 13%, 87% 16%, 88% 18%, 90% 21%, 92% 25%, 93% 28%, 93% 32%, 93% 35%, 94% 38%, 94% 42%, 94% 45%, 91% 49%, 90% 53%, 90% 56%, 90% 59%, 90% 63%, 90% 66%, 91% 69%, 89% 72%, 88% 75%, 86% 78%, 85% 82%, 83% 85%, 81% 88%, 79% 91%, 75% 94%, 71% 95%, 68% 97%, 64% 97%, 62% 98%, 60% 98%, 57% 99%, 55% 98%, 52% 98%, 48% 98%, 44% 97%, 42% 96%, 39% 95%, 37% 95%, 32% 94%, 29% 93%, 24% 93%, 20% 92%, 17% 89%, 14% 87%, 11% 85%, 10% 83%, 8% 82%, 5% 79%, 4% 76%, 3% 73%, 3% 71%, 3% 66%, 3% 63%, 4% 60%, 5% 57%, 5% 54%);
+    transform: rotate(360deg);
+  }
+}
+@keyframes anti_rotate_loop {  
+  0%{
+    transform: rotate(360deg);
+  }
+  100%{
+    transform: rotate(0deg);
   }
 }
 </style>

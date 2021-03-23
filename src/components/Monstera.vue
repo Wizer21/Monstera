@@ -14,7 +14,7 @@
         <img :src="require('../assets/images/multiple_leaf.jpg')" alt="Monstera" id="multiple_leaf">
       </div>
       <div id="side">
-        <p data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
+        <p id="monstera_presentation" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
           Monstera deliciosa est une plante originaire des forêts tropicales. Populaire pour ses feuilles gigantesques.
         </p>
         <div id="leaf_name" data-scroll data-scroll-speed="2" data-scroll-direction="vertical">
@@ -57,19 +57,19 @@ export default {
     let hide_text_container = document.getElementById('hide_text_container')
 
     leaf_name.addEventListener('mouseenter', () => {
-      hide_text_container.style.height = "15vw"
-      hide_text_container.style.width = "15vw"
+      hide_text_container.style.height = "17vw"
+      hide_text_container.style.width = "17vw"
       hide_text_container.style.margin = "0vw"
     })
     leaf_name.addEventListener('mouseleave', () => {
       hide_text_container.style.height = "0vw"
       hide_text_container.style.width = "0vw"
-      hide_text_container.style.margin = "7.5vw"
+      hide_text_container.style.margin = "8.5vw"
     })
     leaf_name.addEventListener('mousemove', event=> {
       let vw = window.innerWidth / 100
-      let x = event.offsetX - (vw * 6)
-      let y = event.offsetY - (vw * 6)
+      let x = event.offsetX - (vw * 8.5)
+      let y = event.offsetY - (vw * 8.5)
       hide_text_container.style.transform = `translate(${x}px, ${y}px)`
       hide_text.style.transform = `translate(${-x}px, ${-y}px)`
     })
@@ -139,9 +139,9 @@ export default {
   margin-top: 20vw;
   width: 20vw;
 }
-#side p 
+#monstera_presentation
 {  
-  font-size: 3em;
+  font-size: 2em;
 }
 #leaf_presentation
 {
@@ -188,7 +188,7 @@ export default {
   position: static;
   margin: 3vw;
   width: 19vw;
-  font-size: 3em;
+  font-size: 2em;
   pointer-events: none;
 
   transition: transform 400ms;

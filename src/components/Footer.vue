@@ -59,7 +59,7 @@ export default {
   grid-column: 1;
   grid-row: 1;
 
-  font-size: 8em;
+  font-size: 10vw;
 }
 #mouse_over
 {
