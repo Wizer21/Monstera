@@ -11,7 +11,7 @@
     </div>
     <div id="body">
       <div id="leaf_presentation" data-scroll data-scroll-speed="-2" data-scroll-direction="horizontal">
-        <img :src="require('../assets/images/multiple_leaf.jpg')" alt="Monstera" id="multiple_leaf" @load="loaded">>
+        <img :src="require('../assets/images/multiple_leaf.jpg')" alt="Monstera" id="multiple_leaf" @load="loaded">
       </div>
       <div id="side">
         <p id="monstera_presentation" data-scroll data-scroll-speed="2" data-scroll-direction="horizontal">
